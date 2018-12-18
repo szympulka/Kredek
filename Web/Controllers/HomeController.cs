@@ -21,14 +21,15 @@ namespace Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<ShowContactViewModel> model = _contactService.GetContacts();
+            return View(model);
         }
 
         [HttpPost]
         public IActionResult Contact(SaveContactViewModel model)
         {
             _contactService.SaveContact(model);
-            return View();
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()

@@ -8,5 +8,6 @@ namespace Kredek.Service.ContactService
     public interface IContactService
     {
         void SaveContact(SaveContactViewModel model);
+        List<ShowContactViewModel> GetContacts();
     }
 }
